@@ -13,7 +13,7 @@
 2. Retrofit
 3. Android Architecture
 4. Maven and Gradle
-5. [Covid19 API](https://covid19api.com/)
+5. [NovelCOVID API](https://github.com/NovelCOVID/API)
 
 
 # Project Management Tool
