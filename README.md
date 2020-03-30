@@ -1,6 +1,6 @@
 # Covid-19-Mobile-App
 
-[Covid-19-Mobile-App](https://github.com/LennyDennis/Covid-19-Mobile-App) this is a mobile application that shares live data about about the Covid-19 currently which is currently affecting the world.
+[Covid-19-Mobile-App](https://github.com/LennyDennis/Covid-19-Mobile-App) is a mobile application that shares live data about about the Covid-19 currently which is currently affecting the world.
 
 # Features
 1. Display the total number of cases, recoveries and deaths.
