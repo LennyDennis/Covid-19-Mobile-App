@@ -8,10 +8,10 @@
 4. Take a user through a screening test and thereafter advice on action to be taken.
 
 # Built With
-1.Java
-2.Retrofit
-3.Android Architecture
-4.Maven and Gradle
+1.Java.
+2.Retrofit.
+3.Android Architecture.
+4.Maven and Gradle.
 5.[Covid19 API](https://covid19api.com/)
 
 
