@@ -35,13 +35,13 @@ public class CovidCountriesStats {
     private Integer critical;
     @SerializedName("casesPerOneMillion")
     @Expose
-    private Integer casesPerOneMillion;
+    private double casesPerOneMillion;
     @SerializedName("deathsPerOneMillion")
     @Expose
-    private Integer deathsPerOneMillion;
+    private double deathsPerOneMillion;
     @SerializedName("updated")
     @Expose
-    private Integer updated;
+    private double updated;
 
     /**
      * No args constructor for use in serialization
@@ -63,7 +63,7 @@ public class CovidCountriesStats {
      * @param todayCases
      * @param todayDeaths
      */
-    public CovidCountriesStats(String country, CountryInfo countryInfo, Integer cases, Integer todayCases, Integer deaths, Integer todayDeaths, Integer recovered, Integer active, Integer critical, Integer casesPerOneMillion, Integer deathsPerOneMillion, Integer updated) {
+    public CovidCountriesStats(String country, CountryInfo countryInfo, Integer cases, Integer todayCases, Integer deaths, Integer todayDeaths, Integer recovered, Integer active, Integer critical, Integer casesPerOneMillion, Integer deathsPerOneMillion, double updated) {
         super();
         this.country = country;
         this.countryInfo = countryInfo;
@@ -151,27 +151,27 @@ public class CovidCountriesStats {
         this.critical = critical;
     }
 
-    public Integer getCasesPerOneMillion() {
+    public double getCasesPerOneMillion() {
         return casesPerOneMillion;
     }
 
-    public void setCasesPerOneMillion(Integer casesPerOneMillion) {
+    public void setCasesPerOneMillion(double casesPerOneMillion) {
         this.casesPerOneMillion = casesPerOneMillion;
     }
 
-    public Integer getDeathsPerOneMillion() {
+    public double getDeathsPerOneMillion() {
         return deathsPerOneMillion;
     }
 
-    public void setDeathsPerOneMillion(Integer deathsPerOneMillion) {
+    public void setDeathsPerOneMillion(double deathsPerOneMillion) {
         this.deathsPerOneMillion = deathsPerOneMillion;
     }
 
-    public Integer getUpdated() {
+    public double getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Integer updated) {
+    public void setUpdated(double updated) {
         this.updated = updated;
     }
 

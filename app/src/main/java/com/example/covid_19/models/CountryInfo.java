@@ -17,10 +17,10 @@ public class CountryInfo {
     private String iso3;
     @SerializedName("lat")
     @Expose
-    private Integer lat;
+    private double lat;
     @SerializedName("long")
     @Expose
-    private Integer _long;
+    private double _long;
     @SerializedName("flag")
     @Expose
     private String flag;
@@ -73,15 +73,15 @@ public class CountryInfo {
         this.iso3 = iso3;
     }
 
-    public Integer getLat() {
+    public double getLat() {
         return lat;
     }
 
-    public void setLat(Integer lat) {
+    public void setLat(double lat) {
         this.lat = lat;
     }
 
-    public Integer getLong() {
+    public double getLong() {
         return _long;
     }
 

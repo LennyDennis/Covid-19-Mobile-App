@@ -21,7 +21,7 @@ public class CountriesRecyclerViewAdapter extends RecyclerView.Adapter<Countries
     private List<CovidCountriesStats> countriesStatsList;
     private Context context;
 
-    public CountriesRecyclerViewAdapter(List<CovidCountriesStats> countriesStatsList, Context context) {
+    public CountriesRecyclerViewAdapter(Context context, List<CovidCountriesStats> countriesStatsList) {
         this.countriesStatsList = countriesStatsList;
         this.context = context;
     }
@@ -41,11 +41,16 @@ public class CountriesRecyclerViewAdapter extends RecyclerView.Adapter<Countries
                 .load(countriesStatsList.get(position).getCountryInfo().getFlag())
                 .into(holder.countryFlag);
         holder.countryName.setText(countriesStatsList.get(position).getCountry());
-        holder.countryTotalCases.setText(countriesStatsList.get(position).getCases());
-        holder.countryTotalDeaths.setText(countriesStatsList.get(position).getDeaths());
-        holder.countryTotalRecoveries.setText(countriesStatsList.get(position).getRecovered());
-        holder.countryTodayCases.setText(countriesStatsList.get(position).getTodayCases());
-        holder.countryTodayDeaths.setText(countriesStatsList.get(position).getTodayDeaths());
+        String cases = Integer.toString(countriesStatsList.get(position).getCases());
+        holder.countryTotalCases.setText("Cases\n" + cases);
+        String deaths = Integer.toString(countriesStatsList.get(position).getDeaths());
+        holder.countryTotalDeaths.setText("Deaths\n" + deaths);
+        String recovered = Integer.toString(countriesStatsList.get(position).getRecovered());
+        holder.countryTotalRecoveries.setText("Recovered\n" + recovered);
+        String todayCases = Integer.toString(countriesStatsList.get(position).getTodayCases());
+        holder.countryTodayCases.setText("Today Cases\n" + todayCases);
+        String todayDeaths = Integer.toString(countriesStatsList.get(position).getTodayDeaths());
+        holder.countryTodayDeaths.setText("Today Deaths\n" + todayDeaths);
     }
 
     @Override
