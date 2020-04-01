@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
                 Log.d(TAG, "onFailure: The total covid stats request failed");
             }
         });
-        // Inflate the layout for this fragment
+
         return view;
     }
 }
