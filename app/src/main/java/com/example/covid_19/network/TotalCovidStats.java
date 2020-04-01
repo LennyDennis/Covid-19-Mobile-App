@@ -17,7 +17,7 @@ public class TotalCovidStats {
     private Integer recovered;
     @SerializedName("updated")
     @Expose
-    private Integer updated;
+    private double updated;
     @SerializedName("active")
     @Expose
     private Integer active;
@@ -68,11 +68,11 @@ public class TotalCovidStats {
         this.recovered = recovered;
     }
 
-    public Integer getUpdated() {
+    public double getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Integer updated) {
+    public void setUpdated(double updated) {
         this.updated = updated;
     }
 

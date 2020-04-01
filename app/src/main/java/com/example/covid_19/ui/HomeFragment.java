@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
@@ -13,6 +14,8 @@ import com.example.covid_19.network.NovelCovid19Api;
 import com.example.covid_19.network.NovelCovidRetrofitInstance;
 import com.example.covid_19.network.TotalCovidStats;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,6 +26,12 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
+    @BindView(R.id.confirmed_deaths)
+    TextView confirmedDeaths;
+    @BindView(R.id.confirmed_recoveries)
+    TextView confirmedRecoveries;
+    @BindView(R.id.confirmed_cases)
+    TextView confirmedCases;
 
     TotalCovidStats totalCovidStats;
 
@@ -35,6 +44,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        ButterKnife.bind(this, view);
 
         NovelCovid19Api retrofitInstance = NovelCovidRetrofitInstance.getNovelCovidRetrofitInstance();
 
@@ -45,12 +55,21 @@ public class HomeFragment extends Fragment {
             public void onResponse(Call<TotalCovidStats> call, Response<TotalCovidStats> response) {
                 if (response.isSuccessful()) {
                     totalCovidStats = response.body();
+                    String totalDeaths = Integer.toString(totalCovidStats.getDeaths());
+                    confirmedDeaths.setText(totalDeaths);
+                    String totalCases = Integer.toString(totalCovidStats.getCases());
+                    confirmedCases.setText(totalCases);
+                    String totalRecoveries = Integer.toString(totalCovidStats.getRecovered());
+                    confirmedRecoveries.setText(totalRecoveries);
+
+                } else {
+                    Log.d(TAG, "onResponse: the call wasn't successful");
                 }
             }
 
             @Override
             public void onFailure(Call<TotalCovidStats> call, Throwable t) {
-                Log.d(TAG, "onFailure: The total covid stats request failed");
+                Log.d(TAG, "onFailure: ", t);
             }
         });
 
