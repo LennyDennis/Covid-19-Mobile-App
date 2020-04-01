@@ -1,5 +1,8 @@
 package com.example.covid_19.network;
 
+import com.example.covid_19.models.CovidCountriesStats;
+import com.example.covid_19.models.TotalCovidStats;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
