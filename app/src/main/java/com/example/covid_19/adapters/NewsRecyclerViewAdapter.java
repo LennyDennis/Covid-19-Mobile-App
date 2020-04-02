@@ -1,6 +1,7 @@
 package com.example.covid_19.adapters;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +9,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.covid_19.R;
 import com.example.covid_19.models.newsAPI.Article;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 
 public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.NewsViewHolder> {
 
@@ -34,21 +39,28 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
         return newsViewHolder;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull NewsViewHolder holder, int position) {
 
-        Glide.with(context).asBitmap().load(newsHeadlines.get(position).getUrl()).into(holder.newsImage);
+        Glide.with(context).asBitmap().load(newsHeadlines.get(position).getUrlToImage()).into(holder.newsImage);
         holder.newsTitle.setText(newsHeadlines.get(position).getTitle());
         holder.newsDescription.setText(newsHeadlines.get(position).getDescription());
-        String newsSource = String.valueOf(newsHeadlines.get(position).getSource());
-        holder.newsSource.setText(newsSource);
-        holder.newsTime.setText(newsHeadlines.get(position).getPublishedAt());
+        String newsSource = String.valueOf(newsHeadlines.get(position).getSource().getName());
+        holder.newsSource.setText(newsSource + " - ");
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:SS'Z'", Locale.ENGLISH);
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+        String publishDate = newsHeadlines.get(position).getPublishedAt();
+        LocalDate date = LocalDate.parse(publishDate, inputFormatter);
+        String formattedDate = outputFormatter.format(date);
+        holder.newsTime.setText(formattedDate);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return newsHeadlines.size();
     }
 
     public class NewsViewHolder extends RecyclerView.ViewHolder {
