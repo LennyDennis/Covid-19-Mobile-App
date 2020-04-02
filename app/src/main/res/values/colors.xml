@@ -10,4 +10,6 @@
     <color name="whiteColor">#fff</color>
     <color name="blackColor">#000</color>
     <color name="anotherBlue">#008bb0</color>
+    <color name="greyColor">#cdcdcd</color>
+    <color name="backgroundBlue">#95c8d8</color>
 </resources>

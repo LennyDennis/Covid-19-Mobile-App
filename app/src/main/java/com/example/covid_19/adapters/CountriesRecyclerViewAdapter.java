@@ -48,9 +48,9 @@ public class CountriesRecyclerViewAdapter extends RecyclerView.Adapter<Countries
         String recovered = Integer.toString(countriesStatsList.get(position).getRecovered());
         holder.countryTotalRecoveries.setText("Recovered\n" + recovered);
         String todayCases = Integer.toString(countriesStatsList.get(position).getTodayCases());
-        holder.countryTodayCases.setText("Today Cases\n" + todayCases);
+        holder.countryTodayCases.setText("Today's Cases\n" + todayCases);
         String todayDeaths = Integer.toString(countriesStatsList.get(position).getTodayDeaths());
-        holder.countryTodayDeaths.setText("Today Deaths\n" + todayDeaths);
+        holder.countryTodayDeaths.setText("Today's Deaths\n" + todayDeaths);
     }
 
     @Override
