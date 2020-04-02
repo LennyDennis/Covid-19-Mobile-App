@@ -1,5 +1,5 @@
 
-package com.example.covid_19.models;
+package com.example.covid_19.models.covidAPI;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

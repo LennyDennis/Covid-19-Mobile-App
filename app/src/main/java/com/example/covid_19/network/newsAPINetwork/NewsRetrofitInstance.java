@@ -1,24 +1,23 @@
-package com.example.covid_19.network;
+package com.example.covid_19.network.newsAPINetwork;
 
 import com.example.covid_19.Constants;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class NovelCovidRetrofitInstance {
+public class NewsRetrofitInstance {
 
     private static Retrofit retrofit = null;
 
-    public static NovelCovid19Api getNovelCovidRetrofitInstance() {
-
+    public static NewsAPI getNewsAPIRetrofitInstance() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(Constants.COVID19_BASE_URL)
+                    .baseUrl(Constants.NEWS_API_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 
-        return retrofit.create(NovelCovid19Api.class);
-
+        return retrofit.create(NewsAPI.class);
     }
+
 }

@@ -1,7 +1,7 @@
-package com.example.covid_19.network;
+package com.example.covid_19.network.covidAPINetwork;
 
-import com.example.covid_19.models.CovidCountriesStats;
-import com.example.covid_19.models.TotalCovidStats;
+import com.example.covid_19.models.covidAPI.CovidCountriesStats;
+import com.example.covid_19.models.covidAPI.TotalCovidStats;
 
 import java.util.List;
 
