@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.covid_19.R;
-import com.example.covid_19.models.CovidCountriesStats;
+import com.example.covid_19.models.covidAPI.CovidCountriesStats;
 
 import java.util.List;
 

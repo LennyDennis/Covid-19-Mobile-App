@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.covid_19.R;
-import com.example.covid_19.models.TotalCovidStats;
-import com.example.covid_19.network.NovelCovid19Api;
-import com.example.covid_19.network.NovelCovidRetrofitInstance;
+import com.example.covid_19.models.covidAPI.TotalCovidStats;
+import com.example.covid_19.network.covidAPINetwork.NovelCovid19Api;
+import com.example.covid_19.network.covidAPINetwork.NovelCovidRetrofitInstance;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

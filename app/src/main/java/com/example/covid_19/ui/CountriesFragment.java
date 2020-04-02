@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.covid_19.R;
 import com.example.covid_19.adapters.CountriesRecyclerViewAdapter;
-import com.example.covid_19.models.CovidCountriesStats;
-import com.example.covid_19.network.NovelCovid19Api;
-import com.example.covid_19.network.NovelCovidRetrofitInstance;
+import com.example.covid_19.models.covidAPI.CovidCountriesStats;
+import com.example.covid_19.network.covidAPINetwork.NovelCovid19Api;
+import com.example.covid_19.network.covidAPINetwork.NovelCovidRetrofitInstance;
 
 import java.util.List;
 
